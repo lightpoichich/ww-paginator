@@ -35,9 +35,6 @@ Features:
 - Emits change event on page changes
 - Auto-generates navigation links with ellipsis
 
-Example:
-{"tag":"ww-lang","name":"Language Selector","props":{"default":{"leftLayout":false,"backgroundColor":"#FFFFFF","hoverColor":"#F1F5F9"}},"styles":{"default":{"margin":"0 16px 0 0","borderRadius":"6px"}},"children":{"langLayout":[{"tag":"ww-flexbox","styles":{"default":{"display":"flex","padding":"8px 16px","backgroundColor":"#E20808","alignItems":"center","columnGap":"8px"}},"children":{"children":[{"tag":"ww-icon","props":{"default":{"icon":"fas fa-globe","color":"#64748B","fontSize":14}}},{"tag":"ww-text","props":{"default":{"tag":"p","text":{"en":""}}},"styles":{"default":{"fontSize":"14px","color":"#64748B"}}}]}}],"currentLangLayout":{"tag":"ww-flexbox","styles":{"default":{"display":"flex","padding":"8px 16px","backgroundColor":"#F31B1B","alignItems":"center","columnGap":"8px"}},"children":{"children":[{"tag":"ww-icon","props":{"default":{"icon":"fas fa-globe","color":"#64748B","fontSize":14}}},{"tag":"ww-text","props":{"default":{"tag":"p","text":{"en":""}}},"styles":{"default":{"fontSize":"14px","color":"#64748B"}}}]}},"langText":{"tag":"ww-text","props":{"default":{"tag":"p","text":"New text"}},"styles":{"default":{"padding":"8px 16px"}}},"currentLangText":{"tag":"ww-text","props":{"default":{"tag":"p","text":"New text"}},"styles":{"default":{"padding":"8px 16px","backgroundColor":"#FFFFFF","border":"1px solid #E2E8F0","borderRadius":"4px","color":"#64748B"}}}}}
-
 Events:
 - change: Triggered when page changes
   Payload: {context: {page: number, offset: number, limit: number, total: number}}
