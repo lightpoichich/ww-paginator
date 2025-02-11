@@ -26,21 +26,26 @@ Properties:
 - paginatorOffset: number - Starting index of current page. Default: 0
 
 Children:
-- paginatorText: ww-text - Text component for page numbers
-- paginatorPrev: ww-icon - Previous navigation button. Default: {isWwObject:true,type:'ww-icon',content:{icon:'fas fa-angle-left'}}
-- paginatorNext: ww-icon - Next navigation button. Default: {isWwObject:true,type:'ww-icon',content:{icon:'fas fa-angle-right'}}
+- paginatorText: ww-text - Text component for page numbers.
+- paginatorPrev: ww-icon - Previous navigation button. Default: {type:'ww-icon',content:{icon:'fas fa-angle-left'}}.
+- paginatorNext: ww-icon - Next navigation button. Default: {type:'ww-icon',content:{icon:'fas fa-angle-right'}}
+
+IMPORTANT: Use right margin and left margin for paginatorPrev and paginatorNext to prevent text being glued to the icon.
 
 Features:
 - Supports custom pagination or collection-based pagination
 - Emits change event on page changes
 - Auto-generates navigation links with ellipsis
 
-Example:
-{"tag":"ww-lang","name":"Language Selector","props":{"default":{"leftLayout":false,"backgroundColor":"#FFFFFF","hoverColor":"#F1F5F9"}},"styles":{"default":{"margin":"0 16px 0 0","borderRadius":"6px"}},"children":{"langLayout":[{"tag":"ww-flexbox","styles":{"default":{"display":"flex","padding":"8px 16px","backgroundColor":"#E20808","alignItems":"center","columnGap":"8px"}},"children":{"children":[{"tag":"ww-icon","props":{"default":{"icon":"fas fa-globe","color":"#64748B","fontSize":14}}},{"tag":"ww-text","props":{"default":{"tag":"p","text":{"en":""}}},"styles":{"default":{"fontSize":"14px","color":"#64748B"}}}]}}],"currentLangLayout":{"tag":"ww-flexbox","styles":{"default":{"display":"flex","padding":"8px 16px","backgroundColor":"#F31B1B","alignItems":"center","columnGap":"8px"}},"children":{"children":[{"tag":"ww-icon","props":{"default":{"icon":"fas fa-globe","color":"#64748B","fontSize":14}}},{"tag":"ww-text","props":{"default":{"tag":"p","text":{"en":""}}},"styles":{"default":{"fontSize":"14px","color":"#64748B"}}}]}},"langText":{"tag":"ww-text","props":{"default":{"tag":"p","text":"New text"}},"styles":{"default":{"padding":"8px 16px"}}},"currentLangText":{"tag":"ww-text","props":{"default":{"tag":"p","text":"New text"}},"styles":{"default":{"padding":"8px 16px","backgroundColor":"#FFFFFF","border":"1px solid #E2E8F0","borderRadius":"4px","color":"#64748B"}}}}}
-
 Events:
 - change: Triggered when page changes
   Payload: {context: {page: number, offset: number, limit: number, total: number}}
   Description: Provides information about the new page state including page number, offset, items per page and total items
 
-Variables: none
+Example:
+<elements>
+{"uid":"styled_paginator","tag":"ww-paginator","name":"Styled Paginator","props":{"default":{"useCustomPagination":true,"paginatorTotal":10,"paginatorLimit":2,"paginatorOffset":6}},"styles":{"default":{"marginTop":"24px","padding":"16px","backgroundColor":"#FFFFFF","borderRadius":"8px","boxShadow":"0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"}},"children":{"paginatorPrev":{"uid":"styled_prev_icon"},"paginatorNext":{"uid":"styled_next_icon"},"paginatorText":{"uid":"styled_page_text"}}}
+{"uid":"styled_prev_icon","tag":"ww-icon","name":"Styled Previous Icon","props":{"default":{"icon":"fas fa-arrow-left","color":"#3B82F6","fontSize":16}},"styles":{"default":{"cursor":"pointer","padding":"8px","marginRight":"6px","borderRadius":"6px","backgroundColor":"#EFF6FF","transition":"all 0.2s ease"},"_wwHover_default":{"backgroundColor":"#DBEAFE"}}}
+{"uid":"styled_next_icon","tag":"ww-icon","name":"Styled Next Icon","props":{"default":{"icon":"fas fa-arrow-right","color":"#3B82F6","fontSize":16}},"styles":{"default":{"cursor":"pointer","padding":"8px","marginLeft":"6px","borderRadius":"6px","backgroundColor":"#EFF6FF","transition":"all 0.2s ease"},"_wwHover_default":{"backgroundColor":"#DBEAFE"}}}
+{"uid":"styled_page_text","tag":"ww-text","name":"Styled Page Text","props":{"default":{"tag":"p"}},"styles":{"default":{"fontSize":"14px","fontWeight":"500","color":"#1E293B"}}}
+</elements>
