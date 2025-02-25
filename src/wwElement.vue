@@ -119,6 +119,7 @@ export default {
     },
     methods: {
         goTo(index) {
+            console.log('goTo', this.paginationOptions, index, this.currentPage);
             if (!this.paginationOptions) return;
             if (index !== -1 && index !== this.currentPage) {
                 if (!this.content.useCustomPagination) {
