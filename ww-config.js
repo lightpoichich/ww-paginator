@@ -37,11 +37,11 @@ export default {
         },
         paginatorPrev: {
             hidden: true,
-            defaultValue: { isWwObject: true, type: 'ww-icon', content: { icon: 'fas fa-angle-left' } },
+            defaultValue: { isWwObject: true, type: '83d890fb-84f9-4386-b459-fb4be89a8e15', content: { icon: 'fas fa-angle-left' } },
         },
         paginatorNext: {
             hidden: true,
-            defaultValue: { isWwObject: true, type: 'ww-icon', content: { icon: 'fas fa-angle-right' } },
+            defaultValue: { isWwObject: true, type: '83d890fb-84f9-4386-b459-fb4be89a8e15', content: { icon: 'fas fa-angle-right' } },
         },
         paginatorTotal: {
             hidden: content => !content.useCustomPagination,
