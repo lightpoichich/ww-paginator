@@ -125,12 +125,20 @@ export default {
                     wwLib.wwCollection.setOffset(this.content.collectionId, index * this.paginationOptions.limit);
                 }
 
+                const pageNumber = index + 1;
+                const offset = index * this.paginationOptions.limit;
+
                 this.$emit('trigger-event', {
                     name: 'change',
                     event: {
+                        value: pageNumber,
+                        offset: offset,
+                        page: pageNumber,
+                        total: this.paginationOptions.total,
+                        limit: this.paginationOptions.limit,
                         context: {
-                            offset: index * this.paginationOptions.limit,
-                            page: index + 1,
+                            offset: offset,
+                            page: pageNumber,
                             total: this.paginationOptions.total,
                             limit: this.paginationOptions.limit,
                         },
